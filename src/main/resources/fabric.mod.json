@@ -1,29 +1,29 @@
 {
   "schemaVersion": 1,
   "id": "mod-toolkit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "name": "Mod Toolkit",
   "description": "Yet another toolkit for EMC.",
   "authors": ["Crushed_Cookie"],
+  "contributors": ["Veyronity", "A2bot (icon designer)"],
   "contact": {},
   "license": "All-Rights-Reserved",
-  "icon": "assets/emc-mod/icon.png",
+  "icon": "assets/mod-toolkit/icon.png",
   "environment": "client",
   "entrypoints": {
     "fabric-datagen": [
-      "emcMod.client.EmcModDataGenerator"
+      "modToolkit.client.ModToolkitDataGenerator"
     ],
     "client": [
-      "emcMod.client.EmcModClient"
+      "modToolkit.client.ModToolkitClient"
     ],
     "main": [
-      "emcMod.EmcMod"
+      "modToolkit.ModToolkit"
     ]
   },
   "mixins": [
-    "emc-mod.mixins.json",
     {
-      "config": "emc-mod.client.mixins.json",
+      "config": "mod-toolkit.mixins.json",
       "environment": "client"
     }
   ],

@@ -1,9 +1,9 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "emcMod.mixin",
+  "package": "modToolkit.mixin.client",
   "compatibilityLevel": "JAVA_21",
-  "mixins": [
+  "client": [
   ],
   "injectors": {
     "defaultRequire": 1

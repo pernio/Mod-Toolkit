@@ -1,35 +1,29 @@
 # Commands
 Here is a list of all commands per category. Each command has a description and an example of how to use it.
 
-## General
-General commands that do not belong in a category.
-
-| Command                    | Description                                                |
-|----------------------------|------------------------------------------------------------|
-| `/tools <on/off>`          | Unlock/lock all commands with a **bold** description below |
-
 ## Follow
 System to follow other players. This includes highlighting player names.
 
 Note:<br/>
-When `/tools` is disabled, will all followed players get their normal color back.
+When `/follow show` is off, will all followed players get their normal color back.
 
-| Command                     | Description                                        |
-|-----------------------------|----------------------------------------------------|
-| `/follow <player>`          | **Follow a player**                                |
-| `/following` + `/seefollow` | **See all the players you are currently following**  |
-| `/removefollow <player>`    | **Remove a player from all players you're following** |
-| `/purgefollow`              | **Clears the entire list**                          |
-| `/colorfollow <color>`      | Sets a color for all following players             |
+| Command                   | Description                                       |
+|---------------------------|---------------------------------------------------|
+| `/follow <player>`        | Follow a player                                   |
+| `/follow list`            | See all the players you are currently following   |
+| `/follow remove <player>` | Remove a player from all players you're following |
+| `/follow clear`           | Clears the entire list                            |
+| `/follow color <color>`   | Sets a color for all following players            |
+| `/follow show <on/off>`   | Show the colors of the followed players           |
 
 
 ## Todo list
 System to keep track of a list of tasks you want to do.
 
-| Command                         | Description                          |
-|---------------------------------|--------------------------------------|
-| `/addtask <name> <description>` | **Add a new task to your todo list** |
-| `/tasks` + `/seetask`           | **Get the names of all tasks**       |
-| `/removetask <name>`            | **Remove a task**                    |
-| `/purgetask`                    | **Clears all tasks**                 |
-| `/task <name>`                  | **Get the description of all tasks** |
+| Command                          | Description                      |
+|----------------------------------|----------------------------------|
+| `/task add <name> <description>` | Add a new task to your todo list |
+| `/task list`                     | Get the names of all tasks       |
+| `/task remove <name>`            | Remove a task                    |
+| `/task clear`                    | Clears all tasks                 |
+| `/task info <name>`              | Get the description of a task    |

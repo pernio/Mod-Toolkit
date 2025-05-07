@@ -14,7 +14,7 @@ loom {
     splitEnvironmentSourceSets()
 
     mods {
-        "emc-mod" {
+        "mod-toolkit" {
             sourceSet sourceSets.main
             sourceSet sourceSets.client
         }
