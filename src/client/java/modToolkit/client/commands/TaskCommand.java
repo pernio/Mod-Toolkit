@@ -76,6 +76,42 @@ public class TaskCommand {
                                     return 1;
                                 })
                         )
+                        .then(literal("change")
+                                .then(argument("name", StringArgumentType.word())
+                                        .suggests((ctx, builder) -> suggestMatching(TaskManager.getAllTasks().keySet(), builder))
+                                        .then(argument("new_description", StringArgumentType.greedyString())
+                                                .executes(ctx -> {
+                                                    String name = StringArgumentType.getString(ctx, "name");
+                                                    String newDesc = StringArgumentType.getString(ctx, "new_description");
+
+                                                    if (TaskManager.updateTaskDescription(name, newDesc)) {
+                                                        sendSuccess(ctx.getSource(), "Updated task '" + name + "' description.");
+                                                    } else {
+                                                        sendError(ctx.getSource(), "Task not found.");
+                                                    }
+                                                    return 1;
+                                                })
+                                        )
+                                )
+                        )
+                        .then(literal("rename")
+                                .then(argument("name", StringArgumentType.word())
+                                        .suggests((ctx, builder) -> suggestMatching(TaskManager.getAllTasks().keySet(), builder))
+                                        .then(argument("new_name", StringArgumentType.word())
+                                                .executes(ctx -> {
+                                                    String name = StringArgumentType.getString(ctx, "name");
+                                                    String newName = StringArgumentType.getString(ctx, "new_name");
+
+                                                    if (TaskManager.renameTask(name, newName)) {
+                                                        sendSuccess(ctx.getSource(), "Renamed task '" + name + "' to '" + newName + "'.");
+                                                    } else {
+                                                        sendError(ctx.getSource(), "Task not found or new name already exists.");
+                                                    }
+                                                    return 1;
+                                                })
+                                        )
+                                )
+                        )
         );
     }
 }

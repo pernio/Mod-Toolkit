@@ -46,6 +46,21 @@ public class TaskManager {
         return tasks;
     }
 
+    public static boolean updateTaskDescription(String name, String newDescription) {
+        if (!tasks.containsKey(name)) return false;
+        tasks.put(name, newDescription);
+        save();
+        return true;
+    }
+
+    public static boolean renameTask(String oldName, String newName) {
+        if (!tasks.containsKey(oldName) || tasks.containsKey(newName)) return false;
+        String desc = tasks.remove(oldName);
+        tasks.put(newName.toLowerCase(Locale.ROOT), desc);
+        save();
+        return true;
+    }
+
     public static void load() {
         try {
             if (!Files.exists(FOLLOW_FILE)) return;

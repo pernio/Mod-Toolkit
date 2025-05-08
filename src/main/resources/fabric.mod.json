@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "mod-toolkit",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "name": "Mod Toolkit",
   "description": "Yet another toolkit for EMC.",
   "authors": ["Crushed_Cookie"],
